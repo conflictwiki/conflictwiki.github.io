@@ -1,7 +1,7 @@
 {
   "homepage": "https://conflictwiki.github.io/",
   "name": "graph-visualisation",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rm -rf docs && mv build docs",
+    "build": "rm -rf build && DISABLE_ESLINT_PLUGIN=true react-scripts build && rm -rf docs && mv build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

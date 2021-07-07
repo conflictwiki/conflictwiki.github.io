@@ -2,11 +2,8 @@ import { ForceGraph2D } from "react-force-graph";
 import React from "react";
 import { sampleSize } from "lodash";
 
-import { nodes } from "./network/nodes";
-import { edges } from "./network/edges";
-
-// let node_list = require("./network/nodes.json");
-// let edge_list = require("./network/edges.json");
+let node_list = require("./network/nodes.json");
+let edge_list = require("./network/edges_new.json");
 
 function transformNodes(nodes) {
     return nodes.map((node) => ({
@@ -69,8 +66,8 @@ class VisualisationGraph extends React.Component {
     constructor(props) {
 	super(props);
 
-	this.nodes = transformNodes(nodes);
-	this.edges = transformEdges(edges);
+	this.nodes = transformNodes(node_list);
+	this.edges = transformEdges(edge_list);
 
 	this.lookup = {};
 	for (let node of this.nodes) {
